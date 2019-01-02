@@ -1,0 +1,14 @@
+apiVersion: crd.k8s.io/v1
+kind: Rule
+metadata:
+  name: example-rule
+spec:
+  namespace: "wy"
+  ownertype: "deployment"
+  ownername: "nginx-app"
+  replicas: 1
+  nodes:
+    - ip: "10.10.102.25"
+      score: 10
+    - ip: "10.10.102.28"
+      score: 9
